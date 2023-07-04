@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
 const itemSchema = mongoose.Schema({
-    itemImage: [{
-
-    }],
+    itemImage: {
+        type: String,
+        required: true
+    },
     itemName: {
         type: String,
         required: true

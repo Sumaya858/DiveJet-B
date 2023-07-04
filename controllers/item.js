@@ -2,7 +2,7 @@ const Item = require('../models/Item')
 
 const item_index_get = async (req, res) => {
     try{
-        const allItems = await Item.find({}, 'itemName itemPrice')
+        const allItems = await Item.find({}, 'itemImage itemName itemPrice')
         res.status(200).json(allItems)
     }catch(error){
         res.status(500).json(error)
