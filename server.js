@@ -52,13 +52,15 @@ app.use(function(req, res, next){
 
 // Import our Routes
 const authRoute = require('./routes/auth')
-const profileRoute = require('./routes/profile')
-
+const coursesRoute = require('./routes/courses')
+const profileRoute = require('./routes/profile')  
 
 
 // Mount our Routes
 app.use('/', authRoute)
-app.use('/', profileRoute)
+app.use('/', coursesRoute)  
+app.use('/', profileRoute)   
+
 
 
 
