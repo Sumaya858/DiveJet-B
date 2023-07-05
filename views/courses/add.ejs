@@ -1,0 +1,77 @@
+<div class="add"> 
+    
+    
+    <div class="add-box">
+    <form method="POST" action="/courses/add" >
+        <h3>Courses Form</h3>
+    <br>
+    <div class="one">
+            <div class="user-box">
+                <label>First Name: </label>
+                <input type="text" name="firstName">
+                <br>
+            </div>
+            <div class="user-box">
+                <label>Last Name: </label>
+                <input type="text" name="lastName">
+                <br>
+            </div>
+            <div class="user-box">
+                <label>Age: </label>
+                <input type="text" name="age">
+                <br>
+                
+               
+            </div>
+        </div>
+         
+        <div class="user-box">
+            <label>Email: </label>
+            <input type="text" name="email">
+            <br>
+            
+            
+        </div>
+    <br>
+        <div class="user-box">
+             <label>Mobile: </label>
+            <input type="text" name="mobile">
+            <br>
+           
+            
+        </div>
+ 
+    <br>
+        <div class="user-box"> 
+            
+            <label>Level: </label>
+            <br>
+            <br>
+            <select name="level"> 
+                <% levels.forEach(function(level){ %> 
+                    <option value="<%= level._id %>"><%= level.name %></option>
+                <% }) %> 
+            </select>  
+            
+            
+        </div>
+
+        
+     
+       
+    
+       
+       
+          <input type="submit" value="Submit">
+        
+    </form>
+    </div>
+    <br>
+    <br>
+    
+    
+    
+    <br>
+    <br>
+    </div>
+    

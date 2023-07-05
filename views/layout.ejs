@@ -9,6 +9,9 @@
 </head>
 <body>
     <h1>Dive Jet</h1>
+
+
+
     <nav>        
         <% if (currentUser) {%>
             <a href="/auth/logout">Log Out</a>
@@ -19,11 +22,21 @@
             <a href="/auth/signin">Sign In</a>
         <% } %>
     </nav>
+
+
+
     <%- body %>
 
+
+
+    
     <% if (currentUser) {%>
         <%= currentUser.firstName %>
     <% }%>
+
+
+
+
     <h3>Footer</h3>
 </body>
 </html>
