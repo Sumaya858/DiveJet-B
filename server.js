@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 const expressLayouts = require('express-ejs-layouts')
 const session = require('express-session')
 const bodyParser = require('body-parser')
+const itemRouter = require('./routes/item')
+const cartRouter = require('./routes/cart')
 
 
 
@@ -21,6 +23,9 @@ app.use(express.static('public'))
 
 // app.use(express.json())
 app.use(bodyParser.json())
+
+app.use('/', itemRouter)
+app.use('/', cartRouter)
 
 app.use(express.urlencoded({
     extended: true
