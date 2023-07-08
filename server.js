@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const expressLayouts = require('express-ejs-layouts')
 const session = require('express-session')
 const bodyParser = require('body-parser')
+
 const passport = require('./lib/passportConfig')
 
 //Initialise our app
@@ -19,9 +20,11 @@ app.use(express.static('public'))
 app.use(express.json())
 // app.use(bodyParser.json())
 
-// app.use(express.urlencoded({
-//     extended: true
-// }))
+
+
+app.use(express.urlencoded({
+    extended: true
+}))
 
 app.use(session({
     secret: 'Thisisasecret!',
@@ -50,19 +53,22 @@ app.use(function(req, res, next){
 
 
 
+
+
 // Import our Routes
 const authRoute = require('./routes/auth')
 const coursesRoute = require('./routes/courses')
 const profileRoute = require('./routes/profile')  
+const itemRouter = require('./routes/item')
+const cartRouter = require('./routes/cart')
 
 
 // Mount our Routes
 app.use('/', authRoute)
 app.use('/', coursesRoute)  
 app.use('/', profileRoute)   
-
-
-
+app.use('/', itemRouter)
+app.use('/', cartRouter)
 
 
 
