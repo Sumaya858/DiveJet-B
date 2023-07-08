@@ -72,7 +72,7 @@ app.use('/', authRoute)
 
 
 app.listen(PORT, () => {
-    console.log(`The Library is open on port ${PORT}`)
+    console.log(`The port is ruuning on port ${PORT}`)
 })
 
 mongoose.connect('mongodb://127.0.0.1:27017/DiveJet',

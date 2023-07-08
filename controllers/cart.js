@@ -2,7 +2,7 @@ const Item = require("../models/Item")
 
 const cart_index_get = async (req, res) =>{
     try{
-        const cartItems = await Item.find(req.query.id).populate('item')   // {user:req.user._id} is for getting the data only related to that user
+        const cartItems = await Item.find(req.query.id).populate("item")  
         console.log(cartItems)
         res.status(200).json(cartItems)
     }catch(error){
@@ -12,13 +12,18 @@ const cart_index_get = async (req, res) =>{
 }
 
 
-// const cart_add_post = async (req, res) => {
-//     try{
-        
-//     }catch(error){
-//         res.status(500).json(error)
-//     }
-// }
+const cart_add_post = async (req, res) => {
+    try{
+        const cartItem =  Item(req.query.id)
+        await cartItem.save()
+        res.status(200).json({
+            message: "item has been added successfully",
+            created: cartItem
+        })
+    }catch(error){
+        res.status(500).json(error)
+    }
+}
 
 const cart_delete_post = async (req, res) => {
     try{
@@ -34,5 +39,6 @@ const cart_delete_post = async (req, res) => {
 
 module.exports = {
     cart_index_get,
-    cart_delete_post
+    cart_delete_post,
+    cart_add_post
 }
