@@ -6,7 +6,7 @@ const isLoggedIn = require('../lib/isLoggedIn')
 const profileController = require('../controllers/profile');
 
 router.get('/profile/view' , isLoggedIn , profileController.view_profile_get)
-router.get('/course/index', isLoggedIn, profileController.course_index_get)
+router.get('/courses/index', isLoggedIn, profileController.course_index_get)
 
 module.exports = router;
 

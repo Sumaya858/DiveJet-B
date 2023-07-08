@@ -7,12 +7,6 @@ const coursesgSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'    
         } ,
-    firstName: {type: String, required: true},
-    lastName: {type: String, required: true},
-    age:{type: Number, required: true},
-    email: {type: String, required: true},
-    mobile:{type: Number, required: true},
-    // chronicdisease: {type: Boolean, required: true},
     level:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Level'    
