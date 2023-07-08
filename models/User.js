@@ -20,6 +20,18 @@ const userSchema = mongoose.Schema({
         lowercase: true,
         unique: true
     },
+    mobile: {
+        type: Number,
+        required: true
+    },
+    age: {
+        type: Date,
+        required: true
+    },
+    disease: {
+        type: Boolean,
+        required: true
+    },
     password: {
         type: String,
         required: true

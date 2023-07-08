@@ -50,7 +50,7 @@ exports.auth_signin_post =async (req, res) => {
         const isMatch = await bcrypt.compareSync(password, user.password); 
         console.log(password); 
         console.log(user.password);
-        res.json({"message" : "User Signed in successfully"})
+        // res.json({"message" : "User Signed in successfully"})
         if(!isMatch){
             return res.json({"message": "Password is not mached!!"}).status(400);
         }
@@ -71,6 +71,7 @@ exports.auth_signin_post =async (req, res) => {
             (err, token) => {
                 if (err) throw err;
                 res.json({ token }).status(200);
+                console.log("You are logged In !!!")
             }
         )
     } catch(error){
