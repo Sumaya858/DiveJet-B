@@ -22,6 +22,7 @@ app.use(express.static('public'))
 // app.use(express.json())
 app.use(bodyParser.json())
 
+
 app.use(express.urlencoded({
     extended: true
 }))
@@ -56,13 +57,15 @@ app.use(function(req, res, next){
 // Import our Routes
 const authRoute = require('./routes/auth')
 const coursesRoute = require('./routes/courses')
-const profileRoute = require('./routes/profile')  
+// const profileRoute = require('./routes/profile')  
+const contactRoute = require('./routes/contact')
 
 
 // Mount our Routes
 app.use('/', authRoute)
 app.use('/', coursesRoute)  
-app.use('/', profileRoute)   
+// app.use('/', profileRoute)  
+app.use('/', contactRoute) 
 
 
 
