@@ -4,8 +4,6 @@ const expressLayouts = require('express-ejs-layouts')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 
-
-
 const passport = require('./lib/passportConfig')
 
 //Initialise our app
@@ -19,8 +17,10 @@ app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
 
-// app.use(express.json())
-app.use(bodyParser.json())
+app.use(express.json())
+// app.use(bodyParser.json())
+
+
 
 
 app.use(express.urlencoded({
@@ -54,21 +54,24 @@ app.use(function(req, res, next){
 
 
 
+
+
 // Import our Routes
 const authRoute = require('./routes/auth')
 const coursesRoute = require('./routes/courses')
-// const profileRoute = require('./routes/profile')  
+const profileRoute = require('./routes/profile')  
+const itemRouter = require('./routes/item')
+const cartRouter = require('./routes/cart')
 const contactRoute = require('./routes/contact')
 
 
 // Mount our Routes
 app.use('/', authRoute)
 app.use('/', coursesRoute)  
-// app.use('/', profileRoute)  
-app.use('/', contactRoute) 
-
-
-
+app.use('/', profileRoute)   
+app.use('/', itemRouter)
+app.use('/', cartRouter)
+app.use('/', contactRoute)
 
 
 
@@ -76,7 +79,7 @@ app.use('/', contactRoute)
 
 
 app.listen(PORT, () => {
-    console.log(`The Library is open on port ${PORT}`)
+    console.log(`The backend is open on port ${PORT}`)
 })
 
 mongoose.connect('mongodb://127.0.0.1:27017/DiveJet',
