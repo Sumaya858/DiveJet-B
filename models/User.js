@@ -22,15 +22,15 @@ const userSchema = mongoose.Schema({
     },
     mobile: {
         type: Number,
-        // required: true
+        required: true
     },
     age: {
         type: Date,
-        // required: true
+        required: true
     },
     disease: {
         type: Boolean,
-        // required: true
+        required: true
     },
     password: {
         type: String,

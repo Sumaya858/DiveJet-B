@@ -22,6 +22,7 @@ app.use(express.json())
 
 
 
+
 app.use(express.urlencoded({
     extended: true
 }))
@@ -61,6 +62,7 @@ const coursesRoute = require('./routes/courses')
 const profileRoute = require('./routes/profile')  
 const itemRouter = require('./routes/item')
 const cartRouter = require('./routes/cart')
+const contactRoute = require('./routes/contact')
 
 
 // Mount our Routes
@@ -69,6 +71,7 @@ app.use('/', coursesRoute)
 app.use('/', profileRoute)   
 app.use('/', itemRouter)
 app.use('/', cartRouter)
+app.use('/', contactRoute)
 
 
 
