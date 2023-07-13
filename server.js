@@ -63,6 +63,7 @@ const profileRoute = require('./routes/profile')
 const itemRouter = require('./routes/item')
 const cartRouter = require('./routes/cart')
 const contactRoute = require('./routes/contact')
+const feedbackRouter = require('./routes/feedback')
 
 
 // Mount our Routes
@@ -72,6 +73,7 @@ app.use('/', profileRoute)
 app.use('/', itemRouter)
 app.use('/', cartRouter)
 app.use('/', contactRoute)
+app.use('/', feedbackRouter)
 
 
 

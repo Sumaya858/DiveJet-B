@@ -1,0 +1,20 @@
+<!-- views/feedbacks.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedbacks</title>
+</head>
+<body>
+  <h1>Feedback</h1>
+  <% if (feedback.length > 0) { %>
+    <ul>
+      <% feedbacks.forEach((feedback) => { %>
+        <li><%= feedback.comment %></li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p>No feedbacks yet!</p>
+  <% } %>
+</body>
+</html>
