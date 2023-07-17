@@ -41,3 +41,18 @@ const LevelMod = require('../models/level')
         res.status(500).json({message: error.message})
     }
 }
+
+
+exports.course_delete = async (req, res) => {
+    console.log(req.query.id)
+    try {
+        await Course.findByIdAndDelete(req.query.id)
+        res.status(200).json({message: 'course is delete'})
+    } catch (error) {
+        console.log(error.message)
+        // req.status(500).json({message: error.message})
+       
+    } finally {
+        console.log('We are in the finally block')
+    }
+}
